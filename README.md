@@ -10,31 +10,6 @@ Two independent AI skills for **generating educational quizzes from documents** 
 
 Try the quiz HTML template live: **[quiz-html-generator.vercel.app](https://quiz-html-generator.vercel.app/)** — a fully functional dark-theme quiz with 8 question types, lives, XP, streaks, and confetti.
 
-## Tool Compatibility
-
-Each skill is a `SKILL.md` file that any **skill-compatible AI tool** can load. Supported platforms:
-
-| Tool | Type | How It Works |
-|------|------|-------------|
-| **OpenCode** | Terminal CLI | Loads skills automatically from your local filesystem. Skills are triggered by describing your task in natural language — it detects the matching skill and follows its instructions. |
-| **Antigravity / Google CLI** | IDE + Terminal | Google's AI-powered CLI and IDE extension. Installs skills from the local filesystem; the agent reads the `SKILL.md` and follows its workflow. Supports the same skill format. |
-| **Claude AI / Claude Code** | Web + Terminal | Anthropic's platform. Upload `SKILL.md` files via the web interface (Settings → Skills) or register via the Claude Code plugin marketplace with `/plugin marketplace add getur/quiz-html-agent`. |
-| **CODEX** | Terminal CLI | Agentic coding tool that can load skill instructions from local files. Point it at a skill directory and it will follow the `SKILL.md` workflow. |
-
-## Requirements
-
-### quiz-from-docs
-
-| Dependency | Purpose | Install |
-|-----------|---------|---------|
-| Python 3.10+ | Runtime | [python.org](https://python.org) |
-| PyMuPDF (fitz) | PDF text extraction | `pip install PyMuPDF` |
-| edge-tts | MP3 audio generation (Microsoft Edge TTS) | `pip install edge-tts` |
-| Pillow (PIL) | Image processing / fallback image gen | `pip install Pillow` |
-| google-genai | Gemini AI image generation | `pip install google-genai` |
-| pytesseract | OCR for image text extraction | `pip install pytesseract` + [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) |
-| ffmpeg + openai-whisper | Video transcript extraction (optional) | `pip install openai-whisper` |
-| Google API Key | Gemini image generation | Set `GOOGLE_API_KEY` env var |
 
 ### quiz-html-generator
 
@@ -101,6 +76,34 @@ git clone https://github.com/getur/quiz-html-agent.git
 cd quiz-html-agent
 git submodule update --init --recursive
 ```
+
+## Tool Compatibility
+
+Each skill is a `SKILL.md` file that any **skill-compatible AI tool** can load. Supported platforms:
+
+| Tool | Type | How It Works |
+|------|------|-------------|
+| **OpenCode** | Terminal CLI | Loads skills automatically from your local filesystem. Skills are triggered by describing your task in natural language — it detects the matching skill and follows its instructions. |
+| **Antigravity / Google CLI** | IDE + Terminal | Google's AI-powered CLI and IDE extension. Installs skills from the local filesystem; the agent reads the `SKILL.md` and follows its workflow. Supports the same skill format. |
+| **Claude AI / Claude Code** | Web + Terminal | Anthropic's platform. Upload `SKILL.md` files via the web interface (Settings → Skills) or register via the Claude Code plugin marketplace with `/plugin marketplace add getur/quiz-html-agent`. |
+| **CODEX** | Terminal CLI | Agentic coding tool that can load skill instructions from local files. Point it at a skill directory and it will follow the `SKILL.md` workflow. |
+
+## Requirements
+
+### quiz-from-docs
+
+| Dependency | Purpose | Install |
+|-----------|---------|---------|
+| Python 3.10+ | Runtime | [python.org](https://python.org) |
+| PyMuPDF (fitz) | PDF text extraction | `pip install PyMuPDF` |
+| edge-tts | MP3 audio generation (Microsoft Edge TTS) | `pip install edge-tts` |
+| Pillow (PIL) | Image processing / fallback image gen | `pip install Pillow` |
+| google-genai | Gemini AI image generation | `pip install google-genai` |
+| pytesseract | OCR for image text extraction | `pip install pytesseract` + [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) |
+| ffmpeg + openai-whisper | Video transcript extraction (optional) | `pip install openai-whisper` |
+| Google API Key | Gemini image generation | Set `GOOGLE_API_KEY` env var |
+
+Do not worry with the requirements, most of them will be automaticaty installed by your agent 
 
 ## Installation & Use
 
