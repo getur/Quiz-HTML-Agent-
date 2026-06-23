@@ -1,0 +1,6 @@
+[submodule "quiz-from-docs"]
+	path = quiz-from-docs
+	url = https://github.com/getur/quiz-from-docs.git
+[submodule "quiz-html-generator"]
+	path = quiz-html-generator
+	url = https://github.com/getur/quiz-html-generator.git
